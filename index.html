@@ -12,7 +12,16 @@
   #droppable { width: 1024px; height: 660px; border: none; padding: 0.5em; float: left; margin: 10px; background: url(images/living-room.jpg) no-repeat}
   .container {width: 100%; margin: 0 auto;}
   </style>
-  <script>
+</head>
+<body>
+<div class="container">
+	<h2 style="text-align: center;">DRAP & DROP PET PRODUCTS</h2>
+
+	<div id="droppable" class="ui-widget-header"></div>
+	<div id="draggable" class="ui-widget-content"></div>
+</div> 
+ 
+<script>
   $(function() {
     $( "#draggable" ).draggable();
     $( "#droppable" ).droppable({
@@ -29,15 +38,6 @@
 		minWidth: 150
 	});
   });
-  </script>
-</head>
-<body>
-<div class="container">
-	<h2 style="text-align: center;">DRAP & DROP PET PRODUCTS</h2>
-
-	<div id="droppable" class="ui-widget-header"></div>
-	<div id="draggable" class="ui-widget-content"></div>
-</div> 
- 
+</script>
 </body>
 </html>

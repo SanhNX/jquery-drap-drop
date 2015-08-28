@@ -9,21 +9,30 @@
   <style>
   #draggable { width: 100px; height: 100px; border: none; padding: 0.5em; float: left;right: 0; margin: 10px 10px 10px 0; background: url(images/pet.png) no-repeat; background-size: 100% 100%;}
   #draggable:hover {border: 1px solid #aaaaaa;}
+  
+  #draggable1 { width: 150px; height: 75px; border: none; padding: 0.5em; float: left;right: 0; margin: 10px 10px 10px 0; background: url(images/pet-1.png) no-repeat; background-size: 100% 100%;}
+  #draggable1:hover {border: 1px solid #aaaaaa;}
+  
   #droppable { width: 1024px; height: 660px; border: none; padding: 0.5em; float: left; margin: 10px; background: url(images/living-room.jpg) no-repeat}
   .container {width: 100%; margin: 0 auto;}
+  .right-group {width: 80%; height: auto; float: left;}
+  .left-group {width: 20%; height: auto;float: right;}
   </style>
 </head>
 <body>
 <div class="container">
 	<h2 style="text-align: center;">DRAP & DROP PET PRODUCTS</h2>
-
-	<div id="droppable" class="ui-widget-header"></div>
-	<div id="draggable" class="ui-widget-content"></div>
+	<div class="right-group">		
+		<div id="droppable" class="ui-widget-header"></div>
+	</div>
+	<div class="left-group">
+		<!--<div id="draggable"></div>-->
+		<div id="draggable1"></div>
+	</div>	
 </div> 
  
 <script>
-  $(function() {
-    $( "#draggable" ).draggable();
+  $(function() {    
     $( "#droppable" ).droppable({
 		drop: function( event, ui ) {
 			$( this ).addClass( "ui-state-highlight" )
@@ -31,10 +40,20 @@
 					.html( "Dropped!" );
 		}
     });
+	
+	$( "#draggable" ).draggable();
 	$( "#draggable" ).resizable({
-		maxHeight: 300,
-		maxWidth: 300,
+		maxHeight: 200,
+		maxWidth: 200,
 		minHeight: 150,
+		minWidth: 150
+	});
+	
+	$( "#draggable1" ).draggable();
+	$( "#draggable1" ).resizable({
+		maxHeight: 150,
+		maxWidth: 300,
+		minHeight: 75,
 		minWidth: 150
 	});
   });
